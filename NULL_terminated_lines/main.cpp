@@ -1,4 +1,4 @@
-#include<iostream>
+Ôªø#include<iostream>
 #include<Windows.h>
 //using namespace std;
 using std::cin;
@@ -44,46 +44,46 @@ void main()
 	const int n = 256;
 	char str[n];
 	//ASCII();
-	cout << "¬‚Â‰ËÚÂ ÒÚÓÍÛ: ";
+	cout << "–í–≤–µ–¥–∏—Ç–µ —Å—Ç—Ä–æ–∫—É: ";
 	//SetConsoleCP(1251);
 	//cin >> str;
 	cin.getline(str, n);
 	//SetConsoleCP(866);
 	cout << str << endl;
-	cout << "–‡ÁÏÂ ÒÚÓÍË ‚ ¡‡ÈÚ‡ı: " << sizeof(str) << endl;
-	cout << "–‡ÁÏÂ ÒÚÓÍË ‚ ÒËÏ‚ÓÎ‡ı: " << StrLen(str) << endl;
+	cout << "–†–∞–∑–º–µ—Ä —Å—Ç—Ä–æ–∫–∏ –≤ –ë–∞–π—Ç–∞—Ö: " << sizeof(str) << endl;
+	cout << "–†–∞–∑–º–µ—Ä —Å—Ç—Ä–æ–∫–∏ –≤ —Å–∏–º–≤–æ–ª–∞—Ö: " << StrLen(str) << endl;
 	to_upper(str);
-	cout << "œÂÂ‚Ó‰ËÏ ÒÚÓÍÛ ‚ ‚ÂıÌËÈ Â„ËÒÚ: " << str << endl;
+	cout << "–ü–µ—Ä–µ–≤–æ–¥–∏–º —Å—Ç—Ä–æ–∫—É –≤ –≤–µ—Ä—Ö–Ω–∏–π —Ä–µ–≥–∏—Å—Ç—Ä: " << str << endl;
 	to_lower(str);
-	cout << "œÂÂ‚Ó‰ËÏ ÒÚÓÍÛ ‚ ÌËÊÌËÈ Â„ËÒÚ: " << str << endl;
+	cout << "–ü–µ—Ä–µ–≤–æ–¥–∏–º —Å—Ç—Ä–æ–∫—É –≤ –Ω–∏–∂–Ω–∏–π —Ä–µ–≥–∏—Å—Ç—Ä: " << str << endl;
 	capitalize(str);
-	cout << "¬ÓÁ‚Ó‰ËÏ ÔÂ‚Û˛ ·ÛÍ‚Û Í‡Ê‰Ó„Ó ÒÎÓ‚‡ ‚ ‚ÂıÌËÈ Â„ËÒÚ: " << str << endl;
+	cout << "–í–æ–∑–≤–æ–¥–∏–º –ø–µ—Ä–≤—É—é –±—É–∫–≤—É –∫–∞–∂–¥–æ–≥–æ —Å–ª–æ–≤–∞ –≤ –≤–µ—Ä—Ö–Ω–∏–π —Ä–µ–≥–∏—Å—Ç—Ä: " << str << endl;
 	shrink(str);
-	cout << "”‰‡ÎˇÂÏ ÎË¯ÌËÂ ÔÓ·ÂÎ˚: " << str << endl;
+	cout << "–£–¥–∞–ª—è–µ–º –ª–∏—à–Ω–∏–µ –ø—Ä–æ–±–µ–ª—ã: " << str << endl;
 
-	cout << "›Ú‡ ÒÚÓÍ‡ ˇ‚ÎˇÂÚÒˇ Ô‡ÎËÌ‰ÓÏÓÏ?: " << (is_palindrome(str)? "ƒ‡" : "ÕÂÚ") << endl;
+	cout << "–≠—Ç–∞ —Å—Ç—Ä–æ–∫–∞ —è–≤–ª—è–µ—Ç—Å—è –ø–∞–ª–∏–Ω–¥—Ä–æ–º–æ–º?: " << (is_palindrome(str)? "–î–∞" : "–ù–µ—Ç") << endl;
 	cout << str << endl;
 #endif // BASE_STRING_OPERATIONS
 	//ASCII();
 	const int n = 256;
 	char str[n] = {};
-	cout << "¬‚Â‰ËÚÂ ÒÚÓÍÛ: ";
+	cout << "–í–≤–µ–¥–∏—Ç–µ —Å—Ç—Ä–æ–∫—É: ";
 	cin.getline (str, n);
-	//cout << (is_int_number(str) ? "◊ËÒÎÓ" : "Õ≈ ˜ËÒÎÓ") << endl;
+	//cout << (is_int_number(str) ? "–ß–∏—Å–ª–æ" : "–ù–ï —á–∏—Å–ª–æ") << endl;
 	//cout << to_int_number(str) * 2 << endl;
 
-	cout << "—ÚÓÍ‡ " << (is_bin_number(str) ? "ˇ‚ÎˇÂÚÒˇ ‰‚ÓË˜Ì˚Ï ˜ËÒÎÓÏ" : "Õ≈ ˇ‚ÎˇÂÚÒˇ ‰‚ÓË˜Ì˚Ï ˜ËÒÎÓÏ") << endl;
+	cout << "–°—Ç—Ä–æ–∫–∞ " << (is_bin_number(str) ? "—è–≤–ª—è–µ—Ç—Å—è –¥–≤–æ–∏—á–Ω—ã–º —á–∏—Å–ª–æ–º" : "–ù–ï —è–≤–ª—è–µ—Ç—Å—è –¥–≤–æ–∏—á–Ω—ã–º —á–∏—Å–ª–æ–º") << endl;
 }
 
 void to_upper(char str[])
 {
 	for (int i = 0; str[i]; i++)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z' || str[i] >= '‡' && str[i] <= 'ˇ')
+		if (str[i] >= 'a' && str[i] <= 'z' || str[i] >= '–∞' && str[i] <= '—è')
 		{
 		   str[i] -= 32;
 		}
-		else if (str[i] == '∏') str[i] -= 16;
+		else if (str[i] == '—ë') str[i] -= 16;
 	}
 }
 
@@ -91,24 +91,24 @@ void to_lower(char str[])
 {
 	for (int i = 0; str[i]; i++)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z' || str[i] >= '¿' && str[i] <= 'ﬂ')
+		if (str[i] >= 'A' && str[i] <= 'Z' || str[i] >= '–ê' && str[i] <= '–Ø')
 		{
 			str[i] += 32;
 		}
-	    else if (str[i] == '®') str[i] += 16;
+	    else if (str[i] == '–Å') str[i] += 16;
 	}
 }
 
 void capitalize(char str[])
 {
 	to_lower;
-	if (str[0] >= 'a' && str[0] <= 'z' || str[0] >= '‡' && str[0] <= 'ˇ')str[0] -= 32;
-	else if (str[0] == '∏') str[0] -= 16;
+	if (str[0] >= 'a' && str[0] <= 'z' || str[0] >= '–∞' && str[0] <= '—è')str[0] -= 32;
+	else if (str[0] == '—ë') str[0] -= 16;
 	for (int i = 1; str[i]; i++)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z' || str[i] >= '‡' && str[i] <= 'ˇ') && str[i-1] == ' ')str[i] -= 32;
-		else if (str[i] == '∏' && str[i-1] == ' ') str[i] -= 16;
-		else if (str[i] == '®' && str[i - 1] == ' ') str[i] += 16;
+		if ((str[i] >= 'a' && str[i] <= 'z' || str[i] >= '–∞' && str[i] <= '—è') && str[i-1] == ' ')str[i] -= 32;
+		else if (str[i] == '—ë' && str[i-1] == ' ') str[i] -= 16;
+		else if (str[i] == '–Å' && str[i - 1] == ' ') str[i] += 16;
 	}
 
 }
@@ -147,12 +147,12 @@ int StrLen(char str[])
 
 bool is_palindrome(char str[])
 {
-	//ŒÔÂ‰ÂÎˇÂÏ ‰ÎËÌÛ ÒÚÓÍË
+	//–û–ø—Ä–µ–¥–µ–ª—è–µ–º –¥–ª–∏–Ω—É —Å—Ç—Ä–æ–∫–∏
 	int size = StrLen(str);
 	char* buffer = new char[size+1] {};
 	str = buffer;
 	//for (int i = 0; str[i]; i++)buffer[i] = str[i];
-	strcpy(buffer, str);//String Copy. buffer - ÒÚÓÍ‡ ÔÓÎÛ˜‡ÚÂÎ¸, str - ÒÚÓÍ‡ ËÒÚÓ˜ÌËÍ
+	strcpy(buffer, str);//String Copy. buffer - —Å—Ç—Ä–æ–∫–∞ –ø–æ–ª—É—á–∞—Ç–µ–ª—å, str - —Å—Ç—Ä–æ–∫–∞ –∏—Å—Ç–æ—á–Ω–∏–∫
 
 	remove_symbol(buffer, ' ');
 	to_lower(buffer);
@@ -206,7 +206,7 @@ int to_int_number(char str[])
 int bin_to_dec(char str[])
 {
 	int decimal = 0;
-	int weight = 1; //‚ÂÒÓ‚ÓÈ ÍÓËÙÙËˆËÂÌÚ ‡Áˇ‰‡
+	int weight = 1; //–≤–µ—Å–æ–≤–æ–π –∫–æ–∏—Ñ—Ñ–∏—Ü–∏–µ–Ω—Ç —Ä–∞–∑—Ä—è–¥–∞
 	for (int i = 0; str[i]; i++)
 	{
 		if (str[i] == ' ')continue;
