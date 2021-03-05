@@ -206,7 +206,7 @@ int to_int_number(char str[])
 
 int bin_to_dec(char str[])
 {
-	/*if (!is_bin_number(str))return 0;
+	if (!is_bin_number(str))return 0;
 	int n = StrLen(str);
 	int decimal = 0;
 	int weight = 1;
@@ -218,20 +218,20 @@ int bin_to_dec(char str[])
 			weight *= 2;
 		}
 	}
-	return decimal;*/
-
-	int decimal = 0;//конечное десятичное число
-	int weight = 1; //весовой коэффициент разряда
-	int size = StrLen(str);
-	for (int i = 0; str[i]; i++)
-	{
-		if (str[i] == ' ')continue;
-		if (str[i] == '1')
-		{
-			weight = 2 ^ (size - 1 - i);
-		}
-		if (str[i] == '0')continue;
-		decimal += weight;
-	}
 	return decimal;
+
+	//int decimal = 0;//конечное десятичное число
+	//int weight = 1; //весовой коэффициент разряда
+	//int size = StrLen(str);
+	//for (int i = 0; str[i]; i++)
+	//{
+	//	if (str[i] == ' ')continue;
+	//	if (str[i] == '1')
+	//	{
+	//		weight = 2 ^ (size - 1 - i);
+	//	}
+	//	if (str[i] == '0')continue;
+	//	decimal += weight;
+	//}
+	//return decimal;
 }
