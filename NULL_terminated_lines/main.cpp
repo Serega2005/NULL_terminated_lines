@@ -71,8 +71,9 @@ void main()
 	cin.getline (str, n);
 	//cout << (is_int_number(str) ? "Число" : "НЕ число") << endl;
 	//cout << to_int_number(str) * 2 << endl;
-
 	cout << "Строка " << (is_bin_number(str) ? "является двоичным числом" : "НЕ является двоичным числом") << endl;
+	cout << str << "(bin) - " << bin_to_dec(str) << "(dec)" <<endl;
+
 }
 
 void to_upper(char str[])
@@ -184,8 +185,8 @@ bool is_bin_number(char str[])
 {
 	for (int i = 0; str[i]; i++)
 	{
-		if (str[i] != '0' && str[i] != '1')return false;
-		if (str[i] == ' ')continue;
+		if (str[i] != '0' && str[i] != '1' && str[i] != ' ')return false;
+		if (str[i-1] == ' ' && str[i] == ' ' && str[i+1] == ' ')return false;
 	}
 	return true;
 }
@@ -205,12 +206,32 @@ int to_int_number(char str[])
 
 int bin_to_dec(char str[])
 {
+	/*if (!is_bin_number(str))return 0;
+	int n = StrLen(str);
 	int decimal = 0;
-	int weight = 1; //весовой коиффициент разряда
+	int weight = 1;
+	for (int i = n - 1; i >= 0; i--)
+	{
+		if (str[i] != ' ')
+		{
+			decimal += (str[i] - 48) * weight;
+			weight *= 2;
+		}
+	}
+	return decimal;*/
+
+	int decimal = 0;//конечное десятичное число
+	int weight = 1; //весовой коэффициент разряда
+	int size = StrLen(str);
 	for (int i = 0; str[i]; i++)
 	{
 		if (str[i] == ' ')continue;
-
-
+		if (str[i] == '1')
+		{
+			weight = 2 ^ (size - 1 - i);
+		}
+		if (str[i] == '0')continue;
+		decimal += weight;
 	}
+	return decimal;
 }
