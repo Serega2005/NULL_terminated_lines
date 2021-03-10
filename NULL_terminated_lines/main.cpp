@@ -1,4 +1,5 @@
 ﻿#include<iostream>
+#include<ctype.h> //для проверки, является ли символ цифрой
 #include<Windows.h>
 //using namespace std;
 using std::cin;
@@ -19,11 +20,15 @@ int StrLen(char str[]);
 bool is_palindrome(char str[]);
 bool is_int_number(char str[]);
 bool is_bin_number(char str[]);
+bool is_hex_number(char str[]);
 
 int to_int_number(char str[]);
 int bin_to_dec(char str[]);
+int hex_to_dec(char str[]);
 
 //#define BASE_STRING_OPERATIONS
+//#define BINARY_NUMBERS
+#define NEX_NUMBERS
 
 void ASCII()
 {
@@ -67,13 +72,20 @@ void main()
 	//ASCII();
 	const int n = 256;
 	char str[n] = {};
-	cout << "Введите строку: ";
-	cin.getline (str, n);
-	//cout << (is_int_number(str) ? "Число" : "НЕ число") << endl;
-	//cout << to_int_number(str) * 2 << endl;
+	cout << "Введите строку: "; 
+	cin.getline(str, n);
+#ifdef BINARY_NUMBER
+    cout << (is_int_number(str) ? "Число" : "НЕ число") << endl;
+	cout << to_int_number(str) * 2 << endl;
 	cout << "Строка " << (is_bin_number(str) ? "является двоичным числом" : "НЕ является двоичным числом") << endl;
-	cout << str << "(bin) - " << bin_to_dec(str) << "(dec)" <<endl;
+	cout << str << "(bin) - " << bin_to_dec(str) << "(dec)" <<endl;	cin.getline (str, n);
+#endif // BINARY_NUMBER
 
+#ifdef NEX_NUMBERS
+	cout << "Строка " << (is_hex_number(str) ? "является шестнадцатиричным числом" : "НЕ является шестнадцатиричным числом") << endl;
+	cout << str << "(Hex) = " << hex_to_dec(str) << "(Dec)" << endl;
+
+#endif //NEX_NUMBERS
 }
 
 void to_upper(char str[])
@@ -191,6 +203,22 @@ bool is_bin_number(char str[])
 	return true;
 }
 
+bool is_hex_number(char str[])
+{
+	for (int i = str[0] == '0' && str[1]=='x'? 2:0; str[i]; i++)
+	{
+		if (
+			!(str[i] >= '0' && str[i] <= '9') &&
+			!(str[i] >= 'a' && str[i] <= 'f') &&
+			!(str[i] >= 'A' && str[i] <= 'F') &&
+			str[i] != ' '
+			)return false;
+		if (str[i] == ' ' && str[i + 1] == ' ')return false;
+	}
+	return true;
+
+}
+
 int to_int_number(char str[])
 {
 	if (!is_int_number(str))return 0;
@@ -234,4 +262,26 @@ int bin_to_dec(char str[])
 	//	decimal += weight;
 	//}
 	//return decimal;
+}
+
+int hex_to_dec(char str[])
+{
+	if (!is_hex_number(str))return 0;
+	int n = strlen(str);
+	char* buffer = new char[n + 1]{};
+	strcpy(buffer, str);
+	to_upper(buffer);
+
+	int decimal = 0;
+	int weight = 1;
+	for (int i = n - 1; i >= 0; i--)
+	{
+		if (buffer[i] == 'x' || buffer[i] == 'X')break;
+		if (buffer[i] != ' ')
+		{
+			decimal += (buffer[i] - (isdigit(buffer[i])? 48 : 55)) * weight;
+			weight *= 16;
+		}
+	}
+	return decimal;
 }
